@@ -1,4 +1,5 @@
 require_relative 'boot'
+require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
@@ -13,5 +14,7 @@ module SampleApp
     # -- all .rb files in that directory are automatically loaded
     config.active_record.default_timezone = :local
     config.time_zone = 'Tokyo'
+    # 認証トークンをremoteフォームに埋め込む
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
